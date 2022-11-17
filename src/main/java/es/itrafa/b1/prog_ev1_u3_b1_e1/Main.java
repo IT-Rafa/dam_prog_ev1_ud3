@@ -15,7 +15,10 @@ package es.itrafa.b1.prog_ev1_u3_b1_e1;
     5
     x vale 10
     x +y vale:15
-    cuando x no valga 10 se imprime el mensaje “x NO vale 10”,ejemplo:
+
+    cuando x no valga 10 se imprime el mensaje “x NO vale 10”
+
+    Ejemplo:
     Teclea número X:
     4
     Teclea número Y:
@@ -23,8 +26,23 @@ package es.itrafa.b1.prog_ev1_u3_b1_e1;
     x NO vale 10
  */
 
-class Init{
-    public static void main(String[] args) {
+import java.util.Scanner;
 
+class Unidad3 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int x;
+        int y;
+        System.out.print("Teclea número entero x: ");
+        x = entrada.nextInt();
+        System.out.print("Teclea número entero y: ");
+        y = entrada.nextInt();
+
+        if (x == 10) {
+            System.out.println("x vale " + x);
+            System.out.println("x + y vale: " + (x + y));
+        } else {
+            System.out.println("x NO vale 10");
+        }
     }
 }

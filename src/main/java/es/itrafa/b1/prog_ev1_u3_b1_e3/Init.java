@@ -1,8 +1,9 @@
 package es.itrafa.b1.prog_ev1_u3_b1_e3;
 /*
     Ejercicio U3_B1_E3
-    Ejecuta el siguiente ejemplo y explica por qué da error la instrucción
-    int y=20;
+    Ejecuta el siguiente ejemplo y explica por qué da error
+    la instrucción int y=20;
+
     class Unidad3 {
         public static void main(String[] args) {
             int x,y;
@@ -20,8 +21,18 @@ package es.itrafa.b1.prog_ev1_u3_b1_e3;
     }
  */
 
-class Init {
+class Unidad3 {
     public static void main(String[] args) {
-
+        int x,y;
+        x=10;
+        y=13;
+        if (x== 10){
+            // int y = 20; y reemplaza la variable de main y no se acepta
+            System.out.println("x:" + x + " y: " + y);
+            x = y * 2;
+            y++;
+        }
+        System.out.println("x:" + x);
+        System.out.println("y:" + y);
     }
 }
