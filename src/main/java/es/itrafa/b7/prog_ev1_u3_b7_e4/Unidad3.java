@@ -1,6 +1,7 @@
 package es.itrafa.b7.prog_ev1_u3_b7_e4;
 /*
-    EJERCICIO U3_B7_E4. Calcular el factorial de un número con recursividad
+    EJERCICIO U3_B7_E4.
+    Calcular el factorial de un número con recursividad
     Podemos definir el factorial de un número n >=0 de forma recursiva
     0! = 1
     n! = n * (n – 1)! , si n > 0
@@ -13,7 +14,7 @@ package es.itrafa.b7.prog_ev1_u3_b7_e4;
  */
 
 import java.util.Scanner;
-import es.itrafa.b7.prog_ev1_u3_b7_e6.Factorial;
+
 public class Unidad3{
     public static void main(String[] args){
         Scanner teclado= new Scanner(System.in);
@@ -22,4 +23,5 @@ public class Unidad3{
         Factorial f = new Factorial();
         System.out.println("Su factorial es: "+f.calcularFactorial(n));
     }
+
 }

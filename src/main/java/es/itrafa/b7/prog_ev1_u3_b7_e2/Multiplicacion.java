@@ -8,7 +8,7 @@ class Multiplicacion {
         else if (b > 0)
             return a + multiplicar(a, --b );
 
-        else //b < k0
+        else //b < 0
             return -a + multiplicar(a, ++b);
     }
 }

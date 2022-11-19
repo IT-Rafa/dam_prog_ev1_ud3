@@ -24,7 +24,12 @@ class Unidad3 {
         System.out.println("Su factorial es: " + factorial(n));
     }
 
-    private static String factorial(int n) {
-        return "";
+    private static int factorial(int n) {
+        int fact = 1;
+        while(n > 1){
+            fact *= n;
+            n--;
+        }
+        return fact;
     }
 }

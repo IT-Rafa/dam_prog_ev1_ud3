@@ -22,6 +22,13 @@ class Unidad3 {
     }
 
 
-    private static void imprimirTriangulo(int i) {
+    private static void imprimirTriangulo(int n) {
+        for (int i = n; i > 0; i--) {
+            System.out.print('*');
+        }
+        System.out.println();
+        if (n != 0) {
+            imprimirTriangulo(n - 1);
+        }
     }
 }

@@ -14,7 +14,7 @@ package es.itrafa.b7.prog_ev1_u3_b7_e1;
     }
  */
 
-class Unidad3 {
+public class Unidad3 {
     static void tablaMultiplicar(int tabla, int i) {
         System.out.println("" + tabla + "x" + i + " = " + (tabla * i));
         if (--i >= 1) {
