@@ -1,6 +1,7 @@
 package es.itrafa.b2.ejercicios.ej10;
 
 /**
+ * Ejercicio 10
  * Radares de tramo
  * Tiempo máximo: 2,000 sMemoria máxima: 4096 KiB
  * <p>
@@ -69,25 +70,49 @@ package es.itrafa.b2.ejercicios.ej10;
  * ERROR
  */
 
+/*
+    Entrada (Metros velMax segTardados
+    Entrada : 9165 110 300
+        Velocidad media = 109.98
+
+    Entrada : 9165 110 299
+        Velocidad media = 110.35
+ */
+
 import java.util.Scanner;
 
 public class Prog {
+    // 9165 110 300 -> 109.98 km/h media
+    // 9165 110 299 -> 110.35 km/h media
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int distMetros;
         int velMax;
         int segs;
-
+        boolean cont = true;
         do {
             distMetros = sc.nextInt();
             velMax = sc.nextInt();
             segs = sc.nextInt();
 
-            if(segs != 0){
-                double distMedia = (double)(distMetros* 1000) / (segs *60 * 60);
-                System.out.println(distMedia);
-            }
+            if (distMetros == 0 && velMax == 0 && segs == 0) {
+                cont = false;
 
-        } while (distMetros != 0 && velMax != 0 && segs != 0);
+            } else if (distMetros <= 0 || velMax <= 0 || segs <= 0) {
+                System.out.println("ERROR");
+
+            } else {
+                double kmHora = ((double) distMetros / 1000) /
+                        ((double) segs / 60 / 60);
+
+                if (kmHora > (velMax * 1.2)) {
+                    System.out.println("PUNTOS");
+                } else if (kmHora > velMax) {
+                    System.out.println("MULTA");
+                } else {
+                    System.out.println("OK");
+                }
+            }
+        } while (cont);
     }
 }
