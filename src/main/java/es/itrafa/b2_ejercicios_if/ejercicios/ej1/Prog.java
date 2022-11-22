@@ -1,4 +1,4 @@
-package es.itrafa.b2.ejercicios.ej1;
+package es.itrafa.b2_ejercicios_if.ejercicios.ej1;
 /**
  * Ejercicio 1
  * Diseña un programa que pida dos números enteros por teclado, determine si el primero es múltiplo del segundo y

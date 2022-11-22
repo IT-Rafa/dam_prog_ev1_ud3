@@ -1,4 +1,4 @@
-package es.itrafa.b2.ejercicios.ej10;
+package es.itrafa.b2_ejercicios_if.ejercicios.ej10;
 
 /**
  * Ejercicio 10

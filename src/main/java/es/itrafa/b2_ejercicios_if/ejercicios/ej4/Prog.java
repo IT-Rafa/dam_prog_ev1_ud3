@@ -1,4 +1,4 @@
-package es.itrafa.b2.ejercicios.ej4;
+package es.itrafa.b2_ejercicios_if.ejercicios.ej4;
 
 /**
  * Haz un programa para calcular la letra del DNI. Solicitará al usuario la introducción del número de DNI. Se

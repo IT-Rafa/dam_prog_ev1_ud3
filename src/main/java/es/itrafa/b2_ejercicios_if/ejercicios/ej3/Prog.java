@@ -1,4 +1,4 @@
-package es.itrafa.b2.ejercicios.ej3;
+package es.itrafa.b2_ejercicios_if.ejercicios.ej3;
 
 import java.util.Scanner;
 
