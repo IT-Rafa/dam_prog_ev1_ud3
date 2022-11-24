@@ -8,18 +8,32 @@ package es.itrafa.b5_runner_bucles_2.ejercicios.ej6;
  * Por teclado simplemente se teclea un número entero que indica el
  * número de asteriscos de la base y la salida es el triángulo
  * correspondiente
- *
+ * <p>
  * Por ejemplo:
  * Entrada 	Resultado
+ * 1        *
  *
- * 1    *
+ * 2        **
+ *          *
  *
- * 2   **
- *      *
- *
- * 3  ***
- *     **
- *      *
+ * 3        ***
+ *          **
+ *          *
  */
+import java.util.Scanner;
+
 public class Prog {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int base = sc.nextInt();
+        for (int i = 0; i < base; i++) {
+            for(int j = 0; j < i; j++){
+                System.out.print(' ');
+            }
+            for (int j = 0; j < base -i; j++) {
+                System.out.print('*');
+            }
+            System.out.println();
+        }
+    }
 }

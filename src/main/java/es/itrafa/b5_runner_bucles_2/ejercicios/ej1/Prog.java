@@ -24,21 +24,18 @@ package es.itrafa.b5_runner_bucles_2.ejercicios.ej1;
  * 25       Número no válido
  */
 
+import java.util.Scanner;
 
-public class Prog{
-    public static void main(String[] args){
-        System.out.println("************************");
-        System.out.println("* TABLAS DE MULTIPLICAR *");
-        System.out.println("************************");
-        System.out.println();
-
-        for(int i = 0; i <= 10;i++){
-            System.out.println("-------------- ");
-            System.out.println(" TABLA DEL "+ i + " ");
-            System.out.println("-------------- ");
-            for(int j=0; j <= 10; j++){
-                System.out.println(" " + i + " x " + j + " = " + (i*j));
+public class Prog {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int tabla = sc.nextInt();
+        if (tabla > 0 && tabla < 9) {
+            for (int i = 0; i <= 10; i++) {
+                System.out.println(tabla + " x " + i + " = " + (tabla * i));
             }
+        } else {
+            System.out.println("Número no válido");
         }
     }
 }

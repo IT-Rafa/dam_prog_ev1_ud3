@@ -27,33 +27,33 @@ package es.itrafa.b5_runner_bucles_2.ejercicios.ej3;
  * <p>
  * <p>
  * Por ejemplo:
- * Test 	Resultado
+ * Test 	                                                        Resultado
  * <p>
- * flipChar("En un lugar de la Mancha")
- * eN UN LUGAR DE LA mANCHA
+ * flipChar("En un lugar de la Mancha")                             eN UN LUGAR DE LA mANCHA
  * <p>
- * flipChar("El MOS6502 es un microprocesador de 8 bits de 1975")
- * eL mos6502 ES UN MICROPROCESADOR DE 8 BITS DE 1975
+ * flipChar("El MOS6502 es un microprocesador de 8 bits de 1975")   eL mos6502 ES UN MICROPROCESADOR DE 8 BITS DE 1975
  * <p>
- * flipChar("\"Veni, vidi, vici\"; Julius Caesar 47 a.C.")
- * "vENI, VIDI, VICI"; jULIUS cAESAR 47 A.c.
+ * flipChar("\"Veni, vidi, vici\"; Julius Caesar 47 a.C.")          "vENI, VIDI, VICI"; jULIUS cAESAR 47 A.c.
  */
 public class Prog {
     public static void main(String[] args) {
-        flipChar("En un lugar de la Mancha");
+        System.out.println(flipChar("En un lugar de la Mancha"));
+        System.out.println(flipChar("El MOS6502 es un microprocesador de 8 bits de 1975"));
+        System.out.println(flipChar("\"Veni, vidi, vici\"; Julius Caesar 47 a.C."));
     }
 
-    static void flipChar(String st) {
+    static String flipChar(String st) {
         String newSt = "";
         for (int i = 0; i < st.length(); i++) {
             if ((st.charAt(i) >= 'a' || st.charAt(i) >= 'A') &&
-                    (st.charAt(i) >= 'z' || st.charAt(i) >= 'Z')) {
-                System.out.println(st.charAt(i) + ": " + Integer.toBinaryString(st.charAt(i)));
+                    (st.charAt(i) <= 'z' || st.charAt(i) <= 'Z')) {
+                newSt += (char) (st.charAt(i) ^ 0b100000);
 
             } else {
                 newSt += st.charAt(i);
             }
         }
+        return newSt;
 
     }
 }
