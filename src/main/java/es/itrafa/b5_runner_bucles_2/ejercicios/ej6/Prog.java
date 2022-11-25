@@ -11,14 +11,14 @@ package es.itrafa.b5_runner_bucles_2.ejercicios.ej6;
  * <p>
  * Por ejemplo:
  * Entrada 	Resultado
- * 1        *
+ * 1________*
  *
- * 2        **
- *          *
+ * 2________**
+ *  _________*
  *
- * 3        ***
- *          **
- *          *
+ * 3________**
+ *  _________*
+ *  _________*
  */
 import java.util.Scanner;
 

@@ -17,7 +17,7 @@ package es.itrafa.tarea2.Ej1;
  */
 public class Prog {
     public static void main(String[] args){
-        for(int i = 0; i < 99; i++){
+        for(int i = 0; i <= 99; i++){
             System.out.print(String.format("%04d  ", (i*i)));
             if((i+1) % 10 == 0){
                 System.out.println();
