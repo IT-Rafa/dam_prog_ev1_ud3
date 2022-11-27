@@ -19,12 +19,19 @@ package es.itrafa.tarea2.Ej6;
  */
 public class Prog {
     public static void main(String[] args) {
+        diamante(4, '#');
         diamante(5, '#');
+        System.out.println();
+        diamante(1, '#');
+        System.out.println();
+        diamante(33, '#');
+
     }
 
     private static void diamante(int i, char c) {
         // impar y comprendida entre 1 y 33.
-        if (i >= 1 && i <= 33) {
+        if (i >= 1 && i <= 33 && i %2 != 0) {
+
             int j;
             for (j = 0; j < (i / 2); j++) {
                 System.out.print(j + 1 + ":");
@@ -33,7 +40,7 @@ public class Prog {
                     System.out.print("_");
                 }
 
-                for (int k = 0; k < j + 1; k++) {
+                for (int k = 0; k < j*2+1; k++) {
                     System.out.print(c);
                 }
                 System.out.println();
@@ -48,7 +55,7 @@ public class Prog {
             for (j = j + 1; j < i; j++) {
                 System.out.print(j + 1 + ":");
 
-                for (int k = 0; k < j - 2; k++) {
+                for (int k = (i / 2) - j; k > 0; k--) {
                     System.out.print("_");
                 }
 
