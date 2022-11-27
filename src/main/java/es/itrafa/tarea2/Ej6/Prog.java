@@ -23,38 +23,42 @@ public class Prog {
     }
 
     private static void diamante(int i, char c) {
-        int j;
-        for (j = 0; j < (i / 2); j++) {
-            System.out.print(j + 1 + ":");
+        // impar y comprendida entre 1 y 33.
+        if (i >= 1 && i <= 33) {
+            int j;
+            for (j = 0; j < (i / 2); j++) {
+                System.out.print(j + 1 + ":");
 
-            for (int k = 0; k < (i / 2) - j; k++) {
-                System.out.print("_");
+                for (int k = 0; k < (i / 2) - j; k++) {
+                    System.out.print("_");
+                }
+
+                for (int k = 0; k < j + 1; k++) {
+                    System.out.print(c);
+                }
+                System.out.println();
             }
 
-            for (int k = 0; k < j+1; k++) {
+            System.out.print(j + 1 + ":");
+            for (int k = 0; k < i; k++) {
                 System.out.print(c);
             }
             System.out.println();
-        }
 
-        System.out.print(j +1 + ":");
-        for (int k = 0; k < i; k++) {
-            System.out.print(c);
-        }
-        System.out.println();
+            for (j = j + 1; j < i; j++) {
+                System.out.print(j + 1 + ":");
 
-        for (j = j+1; j < i; j++) {
-            System.out.print(j + 1 + ":");
+                for (int k = 0; k < j - 2; k++) {
+                    System.out.print("_");
+                }
 
-            for (int k = 0; k < j-2; k++) {
-                System.out.print("_");
+                for (int k = 0; k < i - j; k++) {
+                    System.out.print(c);
+                }
+                System.out.println();
             }
-
-            for (int k = 0; k < i - j; k++) {
-                System.out.print(c);
-            }
-            System.out.println();
         }
+
 
     }
 }
