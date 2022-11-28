@@ -17,9 +17,9 @@ package es.itrafa.tarea2.Ej7;
  * la primera indica el titular donde buscar un mensaje oculto y
  * la segunda indica el mensaje a buscar.
  * <p>
- * Ten en cuenta que no hace falta distinguir entre mayúsculas
- * y minúsculas y que los espacios del mensaje oculto no son relevantes, es decir, no hace falta que existan en el
- * mensaje original, pero sí deben aparecer el resto de caracteres (signos de puntuación, comillas, etc.).
+ * Ten en cuenta que no hace falta distinguir entre mayúsculas y minúsculas y que los espacios del mensaje oculto no
+ * son relevantes, es decir, no hace falta que existan en el mensaje original, pero sí deben aparecer el resto de
+ * caracteres (signos de puntuación, comillas, etc.).
  * <p>
  * La entrada contendrá únicamente letras del alfabeto inglés, por lo que no aparecerán vocales con tilde.
  * Además, podrían aparecer múltiples espacios consecutivos.
@@ -47,28 +47,31 @@ public class Prog {
         // CASOS A PROBAR
         while (casos-- > 0) {
             // INPUT
+            // pasamos a minúsculas la frase original, para comparar sin problemas
             String frase = sc.nextLine().toLowerCase();
 
-            String find = sc.nextLine().toLowerCase().replace(" ", "");
+            // pasamos a minúsculas la frase original, y quitamos espacios
+            String find = sc.nextLine().toLowerCase().replace(" ", "").replace("\t", "");
 
             String solution = "";
             int limit = 0;
 
+            // recorremos la frase
             for (int i = 0; i < find.length(); i++) {
-
+                // buscamos índice correspondiente a frase a buscar. limit es usado para seguir desde donde dejamos de buscar
                 int f = frase.indexOf(find.charAt(i), limit);
 
-                if (f != -1 && (
-                        (frase.charAt(f) >= 'a' && frase.charAt(f) <= 'z') ||
-                                (frase.charAt(f) >= 'A' && frase.charAt(f) <= 'Z'))) {
-                    solution += frase.charAt(f);
-                    limit = f + 1;
-                } else {
+                if (f != -1) { // acumula cada índice y controla el límite
+                        solution += frase.charAt(f);
+                        limit = f + 1;
+
+                } else{ // Si no localiza índice, finalizamos
                     solution = "";
                     break;
                 }
             }
-            System.out.println(solution);
+
+            // Resultado
             if (solution.equals(find)) {
                 System.out.println("SÍ");
             } else {

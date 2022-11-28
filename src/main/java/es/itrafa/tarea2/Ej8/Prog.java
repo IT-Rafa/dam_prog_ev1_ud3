@@ -66,13 +66,18 @@ public class Prog {
         // TEST 2
         Potencia p_1 = new Potencia(2, 3);
         System.out.println(p_1);
+
         System.out.println(p_1 + "=" + p_1.toReal());
+
         p_1 = new Potencia(2, -3);
         System.out.println(p_1 + "=" + p_1.toReal());
+
         p_1 = new Potencia(-2, -3);
-        System.out.println(p + "=" + p.toReal());
+        System.out.println(p_1 + "=" + p_1.toReal());
+
         p_1 = new Potencia(2.5, 2);
         System.out.println(p_1 + "=" + p_1.toReal());
+
         Potencia p1_1 = new Potencia(2, 3);
         Potencia p2_1 = new Potencia(2, 2);
         System.out.println("si multiplico con distinta base: " + p1_1.multiplicarConIgualBase(p_1));

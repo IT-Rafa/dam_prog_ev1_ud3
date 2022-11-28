@@ -4,33 +4,36 @@ public class Potencia {
     double base;
     int exponente;
 
-    public Potencia(double base ,int exponente){
+    public Potencia(double base, int exponente) {
         this.base = base;
         this.exponente = exponente;
     }
 
-    public String toString(){
-        return this.base + "^"+ this.exponente;
+    public String toString() {
+        return this.base + "^" + this.exponente;
     }
 
-    public double toReal(){
-        double result= this.base;
-        for(int i= 1; i < this.exponente; i++){
-            result *= result;
+    public double toReal() {
+        double result = 1;
+        double expPos = Math.abs(this.exponente);
+        for (int i = 1; i <= expPos; i++) {
+            result *= this.base;
         }
-        return result;
+        if (this.exponente == 0) {
+            return 1;
+        } else if (this.exponente < 0) {
+            return 1 / result;
+        } else {
+            return result;
+        }
     }
 
-    public double multiplicarConIgualBase(Potencia p){
-        double result = 0.0;
-        if(this.base == p.base){
 
-        }else{
-            return 0.0;
+    public Potencia multiplicarConIgualBase(Potencia p) {
+        if (this.base == p.base) {
+            return new Potencia(this.base, this.exponente + p.exponente);
+        } else {
+            return null;
         }
-        for(int i= 1; i < p.exponente; i++){
-            result *= result;
-        }
-        return result;
     }
 }
