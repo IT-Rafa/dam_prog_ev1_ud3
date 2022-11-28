@@ -25,17 +25,16 @@ package es.itrafa.tarea2.Ej7;
  * Además, podrían aparecer múltiples espacios consecutivos.
  * <p>
  * Por ejemplo:
- * Entrada 	Resultado
- * <p>
+ * Entrada 	                                                Resultado
  * 4
- * El presidenTE del Gobierno se sOmete esta noche al escrutinio De varIos periOdistas en Televisión Española.
- * te odio.
+ * ...dente ...somete ... de varios periodistas ...
+ * te odio.                                                 SI
  * Teo dijo "si".
- * te odio.
+ * te odio.                                                 SI
  * Y adios, que ya viene el alba.
- * te odio.
+ * te odio.                                                 NO
  * Teo    subio  al    podio.
- * te          odio.
+ * te          odio.                                        SI
  */
 
 import java.util.Scanner;
@@ -55,18 +54,26 @@ public class Prog {
             String solution = "";
             int limit = 0;
 
-            for(int i = 0; i < find.length(); i++){
+            for (int i = 0; i < find.length(); i++) {
+
                 int f = frase.indexOf(find.charAt(i), limit);
-                if (f != -1){
-                    solution += frase.charAt(f) + "(" + f +")";
-                    limit = f +1;
-                }else{
+
+                if (f != -1 && (
+                        (frase.charAt(f) >= 'a' && frase.charAt(f) <= 'z') ||
+                                (frase.charAt(f) >= 'A' && frase.charAt(f) <= 'Z'))) {
+                    solution += frase.charAt(f);
+                    limit = f + 1;
+                } else {
                     solution = "";
                     break;
                 }
             }
             System.out.println(solution);
-
+            if (solution.equals(find)) {
+                System.out.println("SÍ");
+            } else {
+                System.out.println("NO");
+            }
         }
 
     }
